@@ -1,7 +1,77 @@
-$background-color: #4e4e4e;
-$font-color: #dfdfdf;
-
 body {
-  background-color: $background-color;
-  color: $font-color;
+  background-color: #fff;
+  color: #000;
+}
+
+h1 {
+  text-align: center;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+}
+
+.board {
+  margin: auto;
+  position: relative;
+  height: 600px;
+  width: 600px;
+  background-color: #ffc0cb;
+}
+
+.square1 {
+  float: left;
+  width: 33.3333%;
+  height: 33.3333%;
+  background-color: #ff0000;
+}
+.square2 {
+  float: left;
+  width: 33.3333%;
+  height: 33.3333%;
+  background-color: #000000;
+  }
+.square3 {
+  float: right;
+  width: 33.3333%;
+  height: 33.3333%;
+  background-color: #ff0000;
+}
+.square4 {
+  float: left;
+  width: 33.3333%;
+  height: 33.3333%;
+  background-color: #000000;
+}
+.square5 {
+  float: left;
+  width: 33.3333%;
+  height: 33.3333%;
+  background-color: #ff0000;
+}
+.square6 {
+  float: right;
+  width: 33.3333%;
+  height: 33.3333%;
+  background-color: #000000;
+}
+.square7 {
+  float: left;
+  width: 33.3333%;
+  height: 33.3333%;
+  background-color: #ff0000;
+}
+.square8 {
+  float: left;
+  width: 33.3333%;
+  height: 33.3333%;
+  background-color: #000000;
+}
+.square9 {
+  float: right;
+  width: 33.3333%;
+  height: 33.3333%;
+  background-color: #ff0000;
 }
