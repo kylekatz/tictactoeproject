@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-<<html>
-    <head>
-      <title>Tic Tac Toe</title>
-    </head>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+  </head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
     <body>
       <!-- code here -->
       <h1>Tic Tac Toe</h1>
       <div class = "box">
-        <table class="board">
-          <tbody>
-            <tr id="row1">
-              <td id="sq1"></td>
-              <td id="sq2"></td>
-              <td id="sq3"></td>
-            </tr>
-            <tr id="row2">
-              <td id="sq4"></td>
-              <td id="sq5"></td>
-              <td id="sq6"></td>
-            </tr>
-            <tr id="row3">
-              <td id="sq7"></td>
-              <td id="sq8"></td>
-              <td id="sq9"></td>
-            </tr>
-          </tbody>
-        </table>
-        <script src="http://localhost:8080/webpack-dev-server.js"></script>
+        <div id="column1">
+          <button type="button" id = "play"><img src="http://i.imgur.com/3TI1ZWP.jpg"></button>
+          <p style="text-align: center">Play?<p>
+          <br>
+          <br>
+          <p>X wins 0<br>
+            <br>
+             O wins 0<br>
+             <br>
+             Ties 0<br>
+          </p>
+        </div>
+        <div id="column2">
+          <table class="board">
+            <tbody>
+              <tr id="row1">
+                <td id="sq1"></td>
+                <td id="sq2"></td>
+                <td id="sq3"></td>
+              </tr>
+              <tr id="row2">
+                <td id="sq4"></td>
+                <td id="sq5"></td>
+                <td id="sq6"></td>
+              </tr>
+              <tr id="row3">
+                <td id="sq7"></td>
+                <td id="sq8"></td>
+                <td id="sq9"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="column3"></div>
+      <script src="http://localhost:8080/webpack-dev-server.js"></script>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8"></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8"></script>
     </body>

@@ -1,90 +1,120 @@
 body {
   background-color: #000000;
-  color: #000;
+  color: #ccf444;
 }
-
 h1 {
-  background-color: #000000;
-  color: green;
+  color: #ccf444;
+  text-align: center;
   font-family: 'Press Start 2P', cursive;
   font-size: 3em;
-  text-align: center;
+  background: #000000;
+}
+p {
+  color: #ccf444;
+  text-align: right;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2em;
 }
 
 .box {
-  background-color: #000000;
   display: flex;
-  height: 100%;
-  width: 100%;
-}
-
-.board {
   margin: auto;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+}
+#column1 {
+  float: left;
+  margin: 0 auto;
+  width: 30%;
+  color: #ccf444;
+  text-align: center;
+  background-color: #000000;
+}
+#column2 {
+  float: left;
+  margin: 0 auto;
+  width: 40%;
+  background-color: #000000;
+}
+#column3 {
+  float: left;
+  margin: 0 auto;
+  width: 30%;
+  background-color: #000000;
+}
+.board {
   position: relative;
+  margin: auto;
   height: 500px;
   width: 500px;
   background-image: url("http://i.imgur.com/oHDcoDZ.jpg");
 }
-
-#square1 {
-  float: left;
+#row1 {
+  top: 0px;
+  height: 33.3333%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.0);
+}
+#row2 {
+  clear: both;
+  height: 33.3333%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.0);
+}
+#row3 {
+  clear: both;
+  height: 33.3333%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.0);
+}
+#sq1 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#square2 {
-  float: left;
+#sq2 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
   }
-#square3 {
-  float: right;
+#sq3 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#square4 {
-  float: left;
+#sq4 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#square5 {
-  float: left;
+#sq5 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#square6 {
-  float: right;
+#sq6 {
+  width: 33.3333%;
+  height: 33.3333%;
+  background-color: rgba(255, 255, 255, 0.0);;
+}
+#sq7 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#square7 {
-  float: left;
+#sq8 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#square8 {
-  float: left;
+#sq9 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#square9 {
-  float: right;
-  width: 33.3333%;
-  height: 33.3333%;
-  background-color: rgba(255, 255, 255, 0.0);
-}
-
-@media (max-width: 500px) {
-  .board {
-    background-image: url("http://i.imgur.com/OI1rBFn.jpg");
-    height: 240px;
-    width: 240px;
+ @media (max-width: 500px) {
+   .board {
+    background-image: url("http://i.imgur.com/OI1rBFn.jpg")
   }
 }
