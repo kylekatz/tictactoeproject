@@ -49,8 +49,11 @@ p {
   background-color: #000000;
 }
 
-button {
+.play {
   margin: 30px;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2em;
 }
 
 .message {
@@ -93,17 +96,23 @@ button {
   background-color: rgba(255, 255, 255, 0.0);
 }
 
-.sq1 {
+.sq0 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
 
-.sq2 {
+.sq1 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
   }
+
+.sq2 {
+  width: 33.3333%;
+  height: 33.3333%;
+  background-color: rgba(255, 255, 255, 0.0);
+}
 
 .sq3 {
   width: 33.3333%;
@@ -120,13 +129,13 @@ button {
 .sq5 {
   width: 33.3333%;
   height: 33.3333%;
-  background-color: rgba(255, 255, 255, 0.0);
+  background-color: rgba(255, 255, 255, 0.0);;
 }
 
 .sq6 {
   width: 33.3333%;
   height: 33.3333%;
-  background-color: rgba(255, 255, 255, 0.0);;
+  background-color: rgba(255, 255, 255, 0.0);
 }
 
 .sq7 {
@@ -136,12 +145,6 @@ button {
 }
 
 .sq8 {
-  width: 33.3333%;
-  height: 33.3333%;
-  background-color: rgba(255, 255, 255, 0.0);
-}
-
-.sq9 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
