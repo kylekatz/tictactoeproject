@@ -1,19 +1,26 @@
 'use strict';
 
 $("td").on("click", function() {
-  console.log("The square was clicked.");
-  console.dir(event);
-  $(event.currentTarget).off("click");
+  $(event.currentTarget).off('click');
   $(event.currentTarget).text("X");
-  });
+  let inputArray = [];
+  inputArray.push(event.currentTarget);
+  console.log(inputArray);
+});
 
-  function startGame() {
+function setMessage(msg) {
+let wordsHere = document.getElementsByClassName("message");
+console.log(msg);
+}
+
+function startGame() {
     document.turn = "X";
     }
 
 $( document ).ready(function() {
     console.log( "ready!" );
     startGame();
+    setMessage(document.turn + " starts.");
   });
 
 module.exports = true;
