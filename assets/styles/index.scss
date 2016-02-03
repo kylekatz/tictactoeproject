@@ -2,6 +2,7 @@ body {
   background-color: #000000;
   color: #ccf444;
 }
+
 h1 {
   color: #ccf444;
   text-align: center;
@@ -9,6 +10,7 @@ h1 {
   font-size: 3em;
   background: #000000;
 }
+
 p {
   color: #ccf444;
   text-align: right;
@@ -23,7 +25,8 @@ p {
   height: 100%;
   background: #000000;
 }
-#column1 {
+
+.column1 {
   float: left;
   margin: 0 auto;
   width: 30%;
@@ -31,88 +34,119 @@ p {
   text-align: center;
   background-color: #000000;
 }
-#column2 {
+
+.column2 {
   float: left;
   margin: 0 auto;
   width: 40%;
   background-color: #000000;
 }
-#column3 {
+
+.column3 {
   float: left;
   margin: 0 auto;
   width: 30%;
   background-color: #000000;
 }
+
+button {
+  margin: 30px;
+}
+
+.message {
+  color: #ccf444;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2em;
+}
+
 .board {
+  color: #ccf444;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 70px;
+  text-align: center;
   position: relative;
   margin: auto;
   height: 500px;
   width: 500px;
   background-image: url("http://i.imgur.com/oHDcoDZ.jpg");
 }
-#row1 {
+
+.row1 {
   top: 0px;
   height: 33.3333%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#row2 {
+
+.row2 {
   clear: both;
   height: 33.3333%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#row3 {
+
+.row3 {
   clear: both;
   height: 33.3333%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#sq1 {
+
+.sq1 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#sq2 {
+
+.sq2 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
   }
-#sq3 {
+
+.sq3 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#sq4 {
+
+.sq4 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#sq5 {
+
+.sq5 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#sq6 {
+
+.sq6 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);;
 }
-#sq7 {
+
+.sq7 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#sq8 {
+
+.sq8 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-#sq9 {
+
+.sq9 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
+
  @media (max-width: 500px) {
    .board {
     background-image: url("http://i.imgur.com/OI1rBFn.jpg")
