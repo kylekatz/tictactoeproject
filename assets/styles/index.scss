@@ -49,25 +49,19 @@ p {
   background-color: #000000;
 }
 
-.play {
-  margin: 30px;
-  text-align: center;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 2em;
-}
-
-.message {
+#play {
   color: #ccf444;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
   font-size: 2em;
 }
 
-.board {
+#board {
   color: #ccf444;
   font-family: 'Press Start 2P', cursive;
   font-size: 70px;
   text-align: center;
+  border: 1px;
   position: relative;
   margin: auto;
   height: 500px;
@@ -96,55 +90,54 @@ p {
   background-color: rgba(255, 255, 255, 0.0);
 }
 
-.sq0 {
+#sq0 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
 
-.sq1 {
+#sq1 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
   }
 
-.sq2 {
+#sq2 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
 
-.sq3 {
+#sq3 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
 
-.sq4 {
+#sq4 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
 
-.sq5 {
+#sq5 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);;
 }
 
-.sq6 {
+#sq6 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
 
-.sq7 {
+#sq7 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
 }
-
-.sq8 {
+#sq8 {
   width: 33.3333%;
   height: 33.3333%;
   background-color: rgba(255, 255, 255, 0.0);
