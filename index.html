@@ -3,17 +3,22 @@
   <head>
     <title>Tic Tac Toe</title>
   </head>
+  <!-- Large modal -->
+  <form>
+    <input name="credentials[email]" type="text" value="email">
+    <input name="credentials[password]" type="password" value="password">
+    <input name="credentials[password_confirmation]" type="password" value="password">
+  </form>
     <body>
-      <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
       <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
       <!-- code here -->
       <h1>Tic Tac Toe</h1>
       <div class = "box">
         <div class="column1">
-          <button type="button" class = "play"><img src="http://i.imgur.com/3TI1ZWP.jpg"></button>
+          <button type="button" id="butt"><img src="http://i.imgur.com/3TI1ZWP.jpg"></button>
             <br>
             <br>
-            <div id = "play">Play?</div>
+            <div id = "play"></div>
               <br>
               <br>
             <p>X wins 0<br>
