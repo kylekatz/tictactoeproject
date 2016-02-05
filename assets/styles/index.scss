@@ -1,6 +1,11 @@
+html {
+  height: 100%;
+}
+
 body {
   background-color: #000000;
   color: #ccf444;
+  height: 100%;
 }
 
 h1 {
@@ -12,10 +17,10 @@ h1 {
 }
 
 p {
-  color: #ccf444;
+  color: #0000ff;
   text-align: right;
   font-family: 'Press Start 2P', cursive;
-  font-size: 2em;
+  font-size: 17px;
 }
 
 .box {
@@ -47,6 +52,31 @@ p {
   margin: 0 auto;
   width: 30%;
   background-color: #000000;
+}
+
+footer {
+  position:absolute;
+  left:0px;
+  bottom:0px;
+  height:50px;
+  width:100%;
+  color: #0000ff;
+  text-size: 16px;
+  background-color: #000000;
+}
+
+form {
+  height: 20px;
+  font-family:sans-serif;
+  font-size: 15px;
+  color: #0000ff;
+  display: inline-block;
+}
+
+#form {
+  color: #0000ff;
+  font-family: sans-serif;
+  font-size: 15px;
 }
 
 #play {
