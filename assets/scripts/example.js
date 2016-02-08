@@ -58,7 +58,6 @@ $('#sign-out').submit(function(e) {
       data: formData,
     })
     .done(function(data) {
-      myApp.user = data.user;
       console.log(data);
     }).fail(function(jqxhr) {
       console.error(jqxhr);

@@ -1,24 +1,91 @@
 'use strict';
 
+const myApp = {
+  baseUrl: 'http://tic-tac-toe.wdibos.com',
+};
+
+function createGame() {
+   $.ajax({
+     url: myApp.baseUrl + '/games',
+     headers: {
+       Authorization: 'Token token=' + myApp.user.token,
+     },
+     method: 'POST',
+     contentType: false,
+     processData: false,
+     data: {}
+   }).done(function(data) {
+     console.log(data);
+     console.log('Game created');
+     myApp.game = data.game;
+   }).fail(function(jqxhr) {
+      console.error(jqxhr);
+   });
+ }
+
+function saveGame(player, index) {
+console.log('attempting save game');
+  $.ajax({
+    url: myApp.baseUrl + '/games/' + myApp.game.id,
+    // url: 'http://httpbin.org/post',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + myApp.user.token,
+    },
+    data: {
+  "game": {
+    "cell": {
+      "index": index,
+      "value": player,
+    },
+    "over": false
+  }
+}
+  }).done(function(data) {
+    myApp.game = data.game;
+    console.log(data);
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
+  });
+}
+
+function gameCount() {
+    $.ajax({
+      url: myApp.baseUrl + '/games',
+      // url: 'http://httpbin.org/post',å
+      headers: {
+        Authorization: 'Token token=' + myApp.user.token,
+      },
+      type: 'GET',
+    }).done(function(data) {
+      $('#gameCount').html(data.games.length);
+      console.log(data.games.length);
+    }).fail(function(jqxhr) {
+      console.error(jqxhr);
+    });
+}
+
 //VARIABLES
 let turnCount = 0;
-
-let sq0; // value within each cell
-let sq1;
-let sq2;
-let sq3;
-let sq4;
-let sq5;
-let sq6;
-let sq7;
-let sq8;
+let winner;
+let player = 'X';
+let xWins = 0;
+let oWins = 0;
+let ties = 0;
+let gameState = 'on';
 
 //GAME MESSAGE
 function playMessage(content) {
   $('#play').text(content);
 }
 
-playMessage('Play?');
+$("#butt").on('click', function() {
+  $('.td').text('');
+  gameState = 'on';
+  playMessage('Play?');
+  createGame();
+  gameCount();
+});
 
 //PLACE LETTER AND SWITCH TURNS
 $('td').on('click', function() {
@@ -32,73 +99,74 @@ $('td').on('click', function() {
   turnCount++;
 });
 
-let xWin = false;
-let oWin = false;
-
-//WINNER MESSAGE
-function winMessage() {
-  if (xWin === true) {
-    playMessage('X Win!');
-  } else if (oWin === true) {
-    playMessage('O Wins!');
+function scoreKeeper() {
+  if (winner === 'X') {
+    xWins++;
+    $('#pX').text(xWins);
+  } else if (winner === 'O') {
+    oWins++;
+    $('#pO').text(oWins);
+  } else if (winner ==='tie'){
+    ties++;
+    $('#ties').text(ties);
   }
 }
 
-function whoWins() {// CHECKS X
-  if (sq0 === sq1 && sq0 === sq2 && sq0 === 'X' || //first row
-    sq3 === sq4 && sq3 === sq5 && sq3 === 'X' || //second row
-    sq6 === sq7 && sq6 === sq8 && sq6 === 'X' || //third row
-    sq0 === sq3 && sq0 === sq6 && sq0 === 'X' || //first column
-    sq1 === sq4 && sq1 === sq7 && sq1 === 'X' || //second column
-    sq2 === sq5 && sq2 === sq8 && sq2 === 'X' || //third column
-    sq0 === sq4 && sq0 === sq8 && sq0 === 'X' || //diagonal 1
-    sq2 === sq4 && sq2 === sq6 && sq2 === 'X') //diagonal 2
-  {
-    return xWin === true;
-  } else {//CHECKS O
-    if (sq0 === sq1 && sq0 === sq2 && sq0 === 'O' || //second row
-      sq3 === sq4 && sq3 === sq5 && sq3 === 'O' ||
-      sq6 === sq7 && sq6 === sq8 && sq6 === 'O' || //third row
-      sq0 === sq3 && sq0 === sq6 && sq0 === 'O' || //first column
-      sq1 === sq4 && sq1 === sq7 && sq1 === 'O' || //second column
-      sq2 === sq5 && sq2 === sq8 && sq2 === 'O' || //third column
-      sq0 === sq4 && sq0 === sq8 && sq0 === 'O' || //diagonal 1
-      sq2 === sq4 && sq2 === sq6 && sq2 === 'O') //diagonal 2
-    {
-      return oWin === true;
-    } else { // CHECKS TIE
-      if (((sq0 === 'X') || (sq0 === 'O')) && ((sq3 === 'X') ||
-          (sq3 === 'O')) && ((sq6 === 'X') || (sq6 === 'O')) &&
-        ((sq1 === 'X') || (sq1 === 'O')) && ((sq4 === 'X') ||
-          (sq4 === 'O')) && ((sq7 === 'X') || (sq7 === 'O')) &&
-        ((sq2 === 'X') || (sq2 === 'O')) && ((sq5 === 'X') ||
-          (sq5 === 'O')) && ((sq8 === 'X') || (sq8 === 'O'))) {
-        playMessage('Stalemate!');
-      }
+function $tdId(num) {
+  console.log($('#' + num));
+  return $('#' + num);
+}
+
+function checkRows(a, b, c) {
+  if ($tdId(a).text() === player && $tdId(b).text() === player && $tdId(c).text() === player) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function whoWins() {
+  if(checkRows(0, 1, 2) ||
+    checkRows(3, 4, 5) ||
+    checkRows(6, 7, 8) ||
+    checkRows(0, 3, 6) ||
+    checkRows(1, 4, 7) ||
+    checkRows(2, 5, 8) ||
+    checkRows(0, 4, 8) ||
+    checkRows(2, 4, 6)) {
+      winner = player;
+      gameState = 'off';
+      playMessage(player + ' Wins!');
+      scoreKeeper();
+    } else if ($('.td').text().length === 9 ){
+      winner = 'tie';
+      playMessage('It\'s A Tie!');
+      scoreKeeper();
+    } else {
+      return false;
     }
-  }
 }
+
+  //PLACE LETTER AND SWITCH TURNS
+  $('.td').on('click', function() {
+      if (gameState ==='on'){
+        if ($(this).text() !== '') {
+          playMessage('Pick an empty square!');
+        } else if (turnCount % 2 === 0) {
+          $(this).text('X');
+        } else {
+          $(this).text('O');
+        }
+        turnCount++;
+      }
+      whoWins();
+    });
 
 $(document).ready(function() {
   console.log('ready!');
-});
-
-//TURNS OFF SQUARES SOMETIMES too much or not enough
-$('td').on('click', function() {
-  if ($('td').text() === true) {//too much w != null
-    $(event.currentTarget).off('click');
-  }
-});
-
-//CALLS FUNCTIONS ON BOARD CLICK
-$('#board').on('click', function() {
-  whoWins();
-  winMessage();
-});
-
-//CLEARS BOARD
-$('#butt').on('click', function() {
-  $('td').text(' ');
+  createGame();
+  gameCount();
+  saveGame();
 });
 
 module.exports = true;
